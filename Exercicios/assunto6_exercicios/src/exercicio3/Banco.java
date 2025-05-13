@@ -20,7 +20,7 @@ public class Banco {
 
         System.out.print("Quantos clientes deseja cadastrar? ");
         totalClientes = le.nextInt();
-        le.nextLine(); // consumir quebra de linha
+        le.nextLine();
 
         for (int i = 0; i < totalClientes; i++) {
             clientes[i] = new Cliente();
@@ -37,11 +37,10 @@ public class Banco {
             clientes[i].anoAbertura = le.nextInt();
             System.out.print("Saldo: ");
             clientes[i].saldo = le.nextDouble();
-            le.nextLine(); // consumir quebra de linha
+            le.nextLine(); 
             System.out.println();
         }
 
-        // 1. Contar clientes com conta aberta há mais de 10 anos
         int anoAtual = 2025;
         int maisDe10Anos = 0;
         for (int i = 0; i < totalClientes; i++) {
@@ -51,7 +50,6 @@ public class Banco {
         }
         System.out.println("Clientes com conta aberta há mais de 10 anos: " + maisDe10Anos);
 
-        // 2. Contar e mostrar clientes com saldo negativo
         int negativos = 0;
         System.out.println("Contas com saldo negativo:");
         for (int i = 0; i < totalClientes; i++) {
@@ -62,7 +60,6 @@ public class Banco {
         }
         System.out.println("Total de contas com saldo negativo: " + negativos);
 
-        // 3. Busca por CPF
         System.out.print("\nDigite o CPF para buscar o cliente: ");
         String cpfBusca = le.nextLine();
         boolean encontrado = false;
